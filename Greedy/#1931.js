@@ -11,12 +11,13 @@ function solution(input) {
             return [Number(item.split(" ")[0]), Number(item.split(" ")[1])];
         })
         .sort((a, b) => {
-            if (a[1] === b[1]) return a[0] - b[0];
-            else return a[1] - b[1];
+             if (a[1] === b[1]) return a[0] - b[0];
+             else return a[1] - b[1];
         });
 
+
     meeting.forEach((item, index) => {
-        if (item[0] >= target) {
+        if(item[0] >= target){
             answer++;
             target = item[1];
         }
