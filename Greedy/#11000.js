@@ -1,12 +1,11 @@
-const _input = require("fs").readFileSync("sample.txt").toString().trim().split("\n");
+const _input = require("fs").readFileSync("/dev/stdin").toString().trim().split("\n");
 
 function solution(input) {
     const n = +input.shift();
     const times = [];
     let answer = 0;
     let result = 0;
-    
-   
+
     input.forEach((v) => {
         v = v.split(" ");
         v = v.map((v) => parseInt(v));
@@ -19,11 +18,10 @@ function solution(input) {
         return a[0] - b[0];
     });
 
-
-   for (let i = 0; i < times.length; i++) {
-       result += times[i][1];
-       answer = Math.max(result, answer);
-   }
+    for (let i = 0; i < times.length; i++) {
+        result += times[i][1];
+        answer = Math.max(result, answer);
+    }
 
     return answer;
 }
