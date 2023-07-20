@@ -1,4 +1,4 @@
-const _input = require("fs").readFileSync("/dev/stdin").toString().trim().split("\n");
+const _input = require("fs").readFileSync("sample.txt").toString().trim().split("\n");
 
 function solution(input) {
     const [N, M] = input
