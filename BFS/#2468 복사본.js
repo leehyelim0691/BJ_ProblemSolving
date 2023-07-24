@@ -17,7 +17,6 @@ function solution(input) {
         let count = 0;
         visited = Array.from(Array(N), () => Array(N).fill(0));
         for (let j = 0; j < N; j++) {
-            
             for (let k = 0; k < N; k++) {
                 if (graph[j][k] > i && !visited[j][k]) {
                     count++;
