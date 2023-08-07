@@ -10,30 +10,19 @@ function solution(input) {
     dp[M - 1][N - 1] = 1;
 
     function dfs(y, x) {
-        console.log("=================");
-        console.log("0. [", y, ",", x, "]");
-        if (dp[y][x] !== -1) {
-            console.log("1. [", y, ",", x, "]");
-            return dp[y][x];
-        }
+        if (dp[y][x] !== -1) return dp[y][x];
+
         let count = 0;
 
         for (let i = 0; i < dy.length; i++) {
             const ny = y + dy[i];
             const nx = x + dx[i];
-            console.log("2. [", ny, ",", nx, "]");
 
             if (ny >= 0 && ny < M && nx >= 0 && nx < N && graph[y][x] > graph[ny][nx]) {
-                console.log("3. [", ny, ",", nx, "]");
-
                 count += dfs(ny, nx);
-                console.log("hi. [", ny, ",", nx, "]");
             }
         }
-        console.log("4. [", y, ",", x, "]", " count : ", count);
-
         dp[y][x] = count;
-        console.log("5. [", y, ",", x, "]");
 
         return count;
     }
