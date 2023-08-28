@@ -10,7 +10,9 @@ function solution(input) {
     dp[M - 1][N - 1] = 1;
 
     function dfs(y, x) {
-        if (dp[y][x] !== -1) return dp[y][x];
+        if (dp[y][x] !== -1) {
+            return dp[y][x];
+        }
 
         let count = 0;
 
@@ -27,7 +29,8 @@ function solution(input) {
         return count;
     }
 
-    return dfs(0, 0);
+    dfs(0, 0);
+    return dp;
 }
 
 console.log(solution(_input));
