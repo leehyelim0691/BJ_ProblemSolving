@@ -1,4 +1,4 @@
-const _input = require("fs").readFileSync("sample.txt").toString().trim().split("\n");
+const _input = require("fs").readFileSync("/dev/stdin").toString().trim().split("\n");
 
 function solution(input) {
     const [N, M] = input
@@ -32,13 +32,12 @@ function solution(input) {
 
                 if (y >= 0 && y < N && x >= 0 && x < M && !visited[y][x] && graph[y][x] === 1) {
                     needVisit.push([y, x]);
-                    visited[y][x] = 1;
+                    visited[y][x] = visited[ny][nx] + 1;
                 }
             }
         }
-        answer++;
     }
-    return answer;
+    return visited[N - 1][M - 1];
 }
 
 console.log(solution(_input));
